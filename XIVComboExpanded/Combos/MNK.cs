@@ -369,14 +369,14 @@ internal class MonkRiddleOfFire : CustomCombo
         {
             var brotherhood = IsEnabled(CustomComboPreset.MonkRiddleOfFireBrotherhood);
             var wind = IsEnabled(CustomComboPreset.MonkRiddleOfFireWind);
-
+            
             if (brotherhood && wind)
             {
                 if (level >= MNK.Levels.RiddleOfWind)
-                    return CalcBestAction(actionID, MNK.RiddleOfFire, MNK.Brotherhood, MNK.RiddleOfWind);
+                    return CalcBestAction(actionID, OriginalHook(MNK.RiddleOfFire), MNK.Brotherhood, OriginalHook(MNK.RiddleOfWind));
 
                 if (level >= MNK.Levels.Brotherhood)
-                    return CalcBestAction(actionID, MNK.RiddleOfFire, MNK.Brotherhood);
+                    return CalcBestAction(actionID, OriginalHook(MNK.RiddleOfFire), MNK.Brotherhood);
 
                 return actionID;
             }
@@ -384,7 +384,7 @@ internal class MonkRiddleOfFire : CustomCombo
             if (brotherhood)
             {
                 if (level >= MNK.Levels.Brotherhood)
-                    return CalcBestAction(actionID, MNK.RiddleOfFire, MNK.Brotherhood);
+                    return CalcBestAction(actionID, OriginalHook(MNK.RiddleOfFire), MNK.Brotherhood);
 
                 return actionID;
             }
@@ -392,9 +392,7 @@ internal class MonkRiddleOfFire : CustomCombo
             if (wind)
             {
                 if (level >= MNK.Levels.RiddleOfWind)
-                    return CalcBestAction(actionID, MNK.RiddleOfFire, MNK.RiddleOfWind);
-
-                return actionID;
+                    return CalcBestAction(actionID, OriginalHook(MNK.RiddleOfFire), OriginalHook(MNK.RiddleOfWind));
             }
         }
 

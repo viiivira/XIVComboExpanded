@@ -13,6 +13,14 @@ namespace XIVComboExpanded.Interface
             return new Dictionary<string, string[]>()
                 {
                     {
+                        "v2.0.6.0",
+                        [
+                            "API 15 update.",
+                            "MNK: Fixed Riddle of Fire/Wind & Brotherhood combos which were preventing using Fire/Wind Reply under certain conditions.",
+							"Any further update will only be bugfixes or addressing gameplay issues until 8.0 and Evolved/Reborn are available."
+						]
+                    },
+                    {
                         "v2.0.5.0",
                         [
                             "API 14 update!",

@@ -61,6 +61,12 @@ internal class Service
     internal static IClientState ClientState { get; private set; } = null!;
 
     /// <summary>
+    /// Gets the Dalamud object table.
+    /// </summary>
+    [PluginService]
+    internal static IObjectTable ObjectTable { get; private set; } = null!;
+    
+    /// <summary>
     /// Gets the Dalamud command manager.
     /// </summary>
     [PluginService]
